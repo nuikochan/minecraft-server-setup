@@ -1,11 +1,12 @@
 {
   "name": "Minecraft",
-  "description": "A Minecraft Server on Heroku",
+  "description": "Spigot on Heroku",
   "keywords": [
     "games",
-    "minecraft"
+    "minecraft",
+    "spigot"
   ],
-  "repository": "https://github.com/jkutner/heroku-buildpack-minecraft",
+  "repository": "https://github.com/kimbang012/Spigot-on-Heroku",
   "env": {
     "MINECRAFT_EULA": {
       "description": "Do you accept the Minecraft EULA?",
@@ -17,26 +18,23 @@
     },
     "AWS_BUCKET": {
       "description": "S3 Bucket to store your server state (you will lose your games when the server restarts if you don't do this)",
-      "required": true
+      "required": false
     },
     "AWS_ACCESS_KEY": {
       "description": "The AWS access key for the S3 Bucket",
-      "required": true
+      "required": false
     },
     "AWS_SECRET_KEY": {
       "description": "The AWS secret key for the S3 Bucket",
-      "required": true
+      "required": false
     }
   },
   "buildpacks": [
     {
-      "url": "heroku/python"
+      "url": "https://github.com/heroku/heroku-buildpack-jvm-common"
     },
     {
-      "url": "heroku/jvm"
-    },
-    {
-      "url": "heroku-community/inline"
+      "url": "https://github.com/kr/heroku-buildpack-inline.git"
     }
   ]
 }

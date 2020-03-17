@@ -1,0 +1,7 @@
+while :
+do
+	echo "Refreshing dyno"
+	echo $HEROKU_URL
+  	wget $HEROKU_URL
+	sleep 60
+done
